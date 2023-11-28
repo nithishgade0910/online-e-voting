@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% block title %}Profile {{first_name}} {{last_name}}{% endblock title %}
+{% block link %}<link rel="stylesheet" type="text/css" href="/media/css/candidate_profile.css" />{% endblock link %}
+{% block content %}
+
+<div class="form-container">
+    <div class="profile-picture-container">
+        <div class="profile-pic-div">
+            <img id="profile-picture" src="/media/{{profile_photo}}" alt="profile pic">
+        </div>
+    </div>
+    <div class="form-data">
+
+        <div class="detail">
+            <span class="detail-label">First Name</span>
+            <span class="value">{{first_name}}</span>
+        </div>
+        
+        <div class="detail">
+            <span class="detail-label">last_name</span>
+            <span class="value">{{last_name}}</span>
+        </div>
+
+        <div class="detail">
+            <span class="detail-label">Party Name</span>
+            <span class="value">{{party_name}}</span>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- <div>
+    <img src="/media/image/{{profile_photo}}" height="250px" width="250px" />
+    <div>
+        <strong>{{first_name}} {{last_name}}</strong>
+        <p>Party Name:- <strong>{{party_name}}</strong> </p>
+    </div>
+</div> -->
+{% endblock content %}

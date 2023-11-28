@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% block title %}Issue Vote{% endblock title %}
+{% block link %}<link rel="stylesheet" type="text/css" href="/media/css/issue_vote.css">{% endblock link %}
+{% block content %}
+
+<div class="img-login"></div>
+<div class="form-container">
+    <form method="post" class="form">
+        {% csrf_token %}
+        <h1 class="form-title">Cast Vote</h1>
+
+        <div class="form-field">
+            <label for="voter-id" class="form-label">VoterID</label>
+            <input type="text" name="voter_id" class="form-control" id="voter-id" placeholder="Enter Your VoterID" />
+        </div>
+
+        <div class="form-field">
+            <label for="candidate" class="form-label">Select the Candidate</label>
+            <select name="candidate" class="form-control" id="candidate" placeholder="Select the Candidate">
+                {% for candidate in all_candidates %}
+                <option value="{{candidate.id}}">{{candidate.first_name}} {{candidate.last_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="login-btn">Cast Vote</button>
+    </form>
+</div>
+
+
+<!-- <div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="voter_id">Voter ID</label>
+            <input type="text" class="form-control" id="voter_id" name="voter_id">
+        </div>
+        <div class="form-group">
+            <label for="candidate">Select Candidate</label>
+            <select name="candidate" class="form-control">
+                {% for candidate in all_candidates %}
+                <option value="{{ candidate.id }}">{{ candidate.first_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Cast Vote</button>
+    </form>
+</div> -->
+{% endblock content %}

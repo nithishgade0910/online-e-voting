@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,100&family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
+
+body {
+    margin: 40px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.image {
+  background-image: url("../assets/landingVote.png");
+  flex: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.data {
+  flex: 1;
+  height: 100vh;
+  background-color: black;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  margin-top: 40px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex: 1;
+  margin-right: 20px;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  color: #fff;
+  font-family: DM Serif Display;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+button {
+  width: 119px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #015fc7;
+  color: #fff;
+  font-family: DM Serif Display;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: #fff;
+  font-family: DM Serif Display;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+span {
+  color: #015fc7;
+  font-family: DM Serif Display;
+  font-size: 99px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.btn {
+  margin: 10px;
+  color: #ebeced;
+  font-family: Outfit;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 234px;
+  height: 59px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #0160c8;
+}
+
+/* Media Query for Mobile */
+@media only screen and (max-width: 768px) {
+  .image {
+    display: none; /* Hide the image on mobile devices */
+  }
+
+  .navbar{
+    gap: 25px;
+  }
+}
+
+/* Media Query for Tablet */
+@media only screen and (max-width: 1024px) {
+  .image {
+    display: none; /* Hide the image on tablet devices */
+  }
+}

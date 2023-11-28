@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block title %}Login{% endblock title %}
+{% block link %}<link rel="stylesheet" type="text/css" href="/media/css/login.css">{% endblock link %}
+{% block content %}
+    <div class="img-login"></div>
+    <div class="form-container">
+        <form method="post" class="form">
+            {% csrf_token %}
+            <h1 class="form-title">Login form</h1>
+
+            <div class="form-field">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" id="username" placeholder="Enter your username " />
+            </div>
+
+            <div class="form-field">
+                <label for="password1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Enter your Password" />
+            </div>
+
+            <span class="forget-password">Forget Password</span>
+            <div class="not-user">Not a user ? <a href="{% url 'user_register' %}" class="register">Register</a></div>
+
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+{% endblock content %}

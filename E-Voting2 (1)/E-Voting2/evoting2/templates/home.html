@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% block title %}Home{% endblock title %}
+{% block link %}<link rel="stylesheet" type="text/css" href="/media/css/home.css">{% endblock link %}
+{% block content %}
+<div class="main">
+    <div class="image"></div>
+    <div class="navbar">
+        <button><a href="{% url 'user_register' %}">REGISTER</a></button>
+        <button><a href="{% url 'user_login' %}">LOGIN</a></button>
+    </div>
+    <div class="data">
+        <div class="container">
+            <h1>Be a part of Decison</h1>
+            <span>Vote Today</span>
+            <div>
+                <button class="btn"><a href="{% url 'user_register' %}">REGISTER</a></button>
+                <button class="btn">READ MORE</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <ul class="list-group">
+        <h4>On Going Elections</h4>
+        {% for election in on_going_elections %}
+        <li class="list-group-name">
+            {{ election.name }}
+            <a href="{% url 'create_url' election.id %}" class="btn">Create Url</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <ul class="list-group">
+        <h4>Finished Elections</h4>
+        {% for election in finished_elections %}
+        <li class="list-group-name">
+            {{ election.name }}
+            <a href="{% url 'get_result' election.id %}" class="btn">Get Result</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

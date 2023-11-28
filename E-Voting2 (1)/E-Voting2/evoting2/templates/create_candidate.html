@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% block title %}Create Candidate{% endblock title %}
+{% block link %}<link rel="stylesheet" type="text/css" href="/media/css/create_candidate.css">{% endblock link %}
+{% block content %}
+
+<div class="img-login"></div>
+<div class="form-container">
+    <form method="post" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1 class="form-title">Create Candidate</h1>
+
+        <div class="form-field">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Enter Candidates First Name" />
+        </div>
+
+        <div class="form-field">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Enter Candidates Last Name" />
+        </div>
+
+        <div class="form-field">
+            <label for="party_name" class="form-label">Party Name</label>
+        <input type="text" name="party_name" class="form-control" id="party_name" placeholder="Enter Candidates Party Name" />
+        </div>
+        <div class="form-field">
+            <label for="profile_pic" class="form-label">Profile Picture</label>
+            <input type="file" name="profile_pic" class="form-control" placeholder="Enter Candidate Image" />
+        </div>
+
+        <button type="submit" class="login-btn">Add Candidate</button>
+    </form>
+</div>
+
+{% endblock content %}

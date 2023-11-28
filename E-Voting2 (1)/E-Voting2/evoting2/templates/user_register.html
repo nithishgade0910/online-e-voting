@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+{% block title %}Register User{% endblock title %}
+{% block link %}<link rel="stylesheet" type="text/css" href="/media/css/registration.css">{% endblock link %}
+{% block content %}
+<div class="img-login"></div>
+  <div class="form-container">
+    <form method="post" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+      <h1 class="form-title">Registration form</h1>
+
+
+      <div class="form-field">
+        <label for="username"  class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Enter your user name " />
+      </div>
+      <div class="form-field">
+        <label for="username"  class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" id="username" placeholder="Enter your name " />
+      </div>
+      <div class="form-field">
+        <label for="dob" class="form-label">Age</label>
+        <input type="text" name="age" class="form-control" id="dob" placeholder="Enter your Age " />
+      </div>
+      <div class="form-field">
+        <label for="gaurdian-name" class="form-label">Father’s/Mother’s Name</label>
+        <input type="text" name="parents_name" class="form-control" id="gaurdian-name" placeholder="Enter your gaurdian name " />
+      </div>
+      <div class="form-field">
+        <label for="email"  class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email " />
+      </div>
+      <div class="form-field">
+        <label for="email"  class="form-label">address</label>
+        <input type="text" name="address" class="form-control" id="email" placeholder="Enter your address " />
+      </div>
+      <div class="form-field">
+        <label for="mb-no" class="form-label">Mobile No.</label>
+        <input type="tel" name="mobile_number" class="form-control" id="mb-no" placeholder="Enter your Mobile No. " />
+      </div>
+      <div class="form-field">
+        <label for="password1"  class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="password1" placeholder="Enter your Password" />
+      </div>
+      <div class="form-field">
+        <label for="confirmpassword1" class="form-label">Confrim Password</label>
+        <input type="password" class="form-control" id="confirmpassword1" placeholder="Confrim your Password" />
+      </div>
+      <div class="form-field">
+        <label for="Aadhar" class="form-label">Voter ID</label>
+        <input type="text" name="voter_id" class="form-control" id="Aadhar Number" placeholder="Enter your VoterID"/>
+      </div>
+
+      <button type="submit" class="login-btn">SUBMIT</button>
+    </form>
+  </div>
+{% endblock content %}
+
+

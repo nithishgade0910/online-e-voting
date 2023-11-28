@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block title %}Result for {{election.name}}{% endblock title %}
+{% block link %}<link rel="stylesheet" type="text/css" href="/media/css/results.css">{% endblock link %}
+{% block content %}
+<div class="container">
+    <h1>Election Results</h1>
+    
+    <div class="winner">
+        <div>Winner </div>
+        <p>{{winner}}</p>
+    </div>
+
+    <div class="btn">Congratulation</div>
+</div>
+{% endblock content %}

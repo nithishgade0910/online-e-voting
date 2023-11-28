@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% block title %}{{name}} Profile{% endblock title %}
+{% block link %}<link rel="stylesheet" type="text/css" href="/media/css/personal_profile.css">{% endblock link %}
+{% block content %}
+<div class="form-container">
+    <div class="profile-picture-container">
+        <div class="profile-pic-div">
+            <img id="profile-picture" src="/media/profile_pic/{{profile_pic}}" alt="profile pic">
+        </div>
+
+        <button style="width: 500px; height: 8%; margin-top: 30px; margin-bottom: 30px;" class="navbar-vote-button">
+            Change Profile Picture
+        </button>
+    </div>
+    <div class="form-data">
+
+        <div class="detail">
+            <span class="detail-label">Name</span>
+            <span class="value">{{name}}</span>
+        </div>
+        <div class="detail">
+            <span class="detail-label">Father's Name</span>
+            <span class="value">{{parents_name}}</span>
+        </div>
+        <div class="detail">
+            <span class="detail-label">Age</span>
+            <span class="value">{{age}}</span>
+        </div>
+        <div class="detail">
+            <span class="detail-label">Mobile Number</span>
+            <span class="value">+91 {{mobile_number}}</span>
+        </div>
+
+        <div class="detail">
+            <span class="detail-label">Email</span>
+            <span class="value">{{email}}</span>
+        </div>
+        <div class="detail">
+            <span class="detail-label">Address</span>
+            <span class="value">{{address}}</span>
+        </div>
+    </div>
+</div>
+{% endblock content %}

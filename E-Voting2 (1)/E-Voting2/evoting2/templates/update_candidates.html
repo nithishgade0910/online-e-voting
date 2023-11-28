@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% block title %}Update Candidates{% endblock title %}
+{% block content %}
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="candidates">Select Candidate</label>
+            <select name="candidates" class="form-control">
+                {% for candidate in all_candidates %}
+                <option value="{{ candidate.id }}">{{ candidate.first_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{% endblock content %}
